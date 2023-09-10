@@ -1,0 +1,110 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Verdana, Geneva, Tahoma, sans-serif
+}
+
+body {
+
+
+    background: linear-gradient(to right, #1CB5E0, #000046, #240b36);
+    color: white;
+
+}
+
+.container {
+
+    display: flex;
+    align-items: center;
+    position: relative;
+    bottom: 50px;
+    width: 100%;
+    padding-left: 25px;
+    padding-right: 25px;
+
+}
+
+.container>input {
+
+    width: 100%;
+    padding: 15px;
+    font-size: large;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+}
+
+.container>span {
+
+    font-size: 50px;
+    padding: 10px;
+    cursor: pointer;
+
+}
+
+#main {
+
+    padding: 25px;
+    height: 80vh;
+    overflow-y: auto;
+
+}
+
+#main>div {
+
+    padding: 10px;
+    margin-bottom: 15px;
+    background-color: rgba(0, 0, 139, 0.386);
+    border-radius: 10px;
+}
+
+#main>#user-input {
+
+    text-align: right;
+}
+
+#main>#ai-output {
+
+    text-align: left;
+}
+
+h1 {
+    text-align: center;
+    padding: 20px;
+}
+
+.loader {
+    border: 10px solid #f3f3f3;
+    border-top: 10px solid #000046;
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+#spinner {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+@media (max-width: 600px) {
+    .loader {
+        width: 40px;
+        height: 40px;
+        border: 8px solid #f3f3f3;
+        border-top: 8px solid #000046;
+    }
+}
