@@ -52,18 +52,19 @@ body {
 
     padding: 10px;
     margin-bottom: 15px;
-    background-color: rgba(0, 0, 139, 0.386);
     border-radius: 10px;
 }
 
 #main>#user-input {
 
     text-align: right;
+    background-color: rgba(0, 0, 139, 0.386);
 }
 
 #main>#ai-output {
 
     text-align: left;
+    background-color: #1c3de092;
 }
 
 h1 {
