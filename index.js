@@ -1,24 +1,30 @@
 const url = 'https://api.daku.tech/v1/chat/completions';
-const authToken = 'sk-xxxx'; 
-const main=document.getElementById('main');
-const container=document.querySelector('.container');
-
+const authToken = 'sk-xxxx';
+const main = document.getElementById('main');
+const container = document.querySelector('.container');
 
 let isRequestInProgress = false;
+const button = container.lastElementChild;
+const inputField = container.firstElementChild;
 
-container.lastElementChild.addEventListener('click',()=>{
+button.addEventListener('click', handleEvent);
+inputField.addEventListener('keypress', function (e) {
+  if (e.key === 'Enter') {
+    handleEvent();
+  }
+});
 
-  
-  if (isRequestInProgress) {
+function handleEvent() {
+  if (isRequestInProgress || inputField.value.trim() === '') {
     return;
   }
 
-  const userInput=document.createElement('div');
-  userInput.id='user-input';
-  userInput.textContent=container.firstElementChild.value;
+  const userInput = document.createElement('div');
+  userInput.id = 'user-input';
+  userInput.textContent = inputField.value;
 
   main.appendChild(userInput);
-  
+
   const requestBody = {
     "messages": [
       {
@@ -26,19 +32,19 @@ container.lastElementChild.addEventListener('click',()=>{
         "role": "system"
       },
       {
-        "content": `${container.firstElementChild.value}`,
+        "content": `${inputField.value}`,
         "role": "user"
       }
     ],
     "model": "gpt-3.5-turbo"
   };
 
- 
+
+  inputField.value = '';
   isRequestInProgress = true;
 
   fetchData(requestBody);
-
-});
+}
 
 async function fetchData(requestBody) {
   try {
@@ -59,15 +65,28 @@ async function fetchData(requestBody) {
 
     const data = await response.json();
     document.getElementById("spinner").style.display = "none";
-    const userOutput=document.createElement('div');
-    userOutput.id='ai-output';
-    userOutput.textContent=data.choices[0].message.content;
-    main.appendChild(userOutput);
-    
+    const aiOutput = document.createElement('div');
+    aiOutput.id = 'ai-output';
+
+    let i = 0;
+    const text = data.choices[0].message.content;
+    const speed = 50;
+
+    function typeWriter() {
+      if (i < text.length) {
+        aiOutput.textContent += text.charAt(i);
+        i++;
+        setTimeout(typeWriter, speed);
+      } else {
+        isRequestInProgress = false;
+      }
+    }
+
+    typeWriter();
+
+    main.appendChild(aiOutput);
+
   } catch (error) {
     console.error('Error:', error);
-  } finally {
-   
-    isRequestInProgress = false;
   }
 }
