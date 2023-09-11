@@ -24,6 +24,7 @@ function handleEvent() {
   userInput.textContent = inputField.value;
 
   main.appendChild(userInput);
+  main.scrollTop = main.scrollHeight;
 
   const requestBody = {
     "messages": [
@@ -38,7 +39,6 @@ function handleEvent() {
     ],
     "model": "gpt-3.5-turbo"
   };
-
 
   inputField.value = '';
   isRequestInProgress = true;
@@ -77,6 +77,7 @@ async function fetchData(requestBody) {
         aiOutput.textContent += text.charAt(i);
         i++;
         setTimeout(typeWriter, speed);
+        main.scrollTop = main.scrollHeight;
       } else {
         isRequestInProgress = false;
       }
