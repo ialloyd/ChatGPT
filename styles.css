@@ -14,8 +14,8 @@ body {
 
     display: flex;
     align-items: center;
-    position: relative;
-    bottom: 35px;
+    position: fixed;
+    bottom: 10px;
     width: 100%;
     padding-left: 25px;
     padding-right: 25px;
@@ -70,6 +70,8 @@ body {
 h1 {
     text-align: center;
     padding: 20px;
+    font-weight: 200;
+    font-style: italic;
 }
 
 .loader {
