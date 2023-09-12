@@ -108,3 +108,21 @@ h1 {
         border-top: 8px solid #000046;
     }
 }
+
+#main::-webkit-scrollbar {
+    width: 10px;
+}
+
+#main::-webkit-scrollbar-track {
+    background:#93ddf1;
+    border-radius:5px; 
+}
+
+#main::-webkit-scrollbar-thumb {
+    background: #1c3de092;
+    border-radius:5px; 
+}
+
+#main::-webkit-scrollbar-thumb:hover {
+    background: #1c3de0d2; 
+}
