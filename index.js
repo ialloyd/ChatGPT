@@ -1,5 +1,5 @@
 const url = 'https://api.daku.tech/v1/chat/completions';
-const authToken = 'sk-xxxx';
+const authToken = 'sk-ITtdLT07J3s9PSEtT3BlbkFJITtdLT07J3s9PSEt';
 const main = document.getElementById('main');
 const container = document.querySelector('.container');
 
