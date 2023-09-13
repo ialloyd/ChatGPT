@@ -70,7 +70,7 @@ async function fetchData(requestBody) {
 
     let i = 0;
     const text = data.choices[0].message.content;
-    const speed = 50;
+    const speed = 10;
 
     function typeWriter() {
       if (i < text.length) {

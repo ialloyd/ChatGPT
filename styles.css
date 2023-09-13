@@ -49,21 +49,19 @@ body {
 }
 
 #main>div {
-
     padding: 10px;
     margin-bottom: 15px;
     border-radius: 10px;
+    clear: both;
 }
 
 #main>#user-input {
-
-    text-align: right;
+    float:right;
     background-color: rgba(0, 0, 139, 0.386);
 }
 
 #main>#ai-output {
-
-    text-align: left;
+    float: left;
     background-color: #1c3de092;
 }
 
@@ -114,15 +112,15 @@ h1 {
 }
 
 #main::-webkit-scrollbar-track {
-    background:#93ddf1;
-    border-radius:5px; 
+    background: #93ddf1;
+    border-radius: 5px;
 }
 
 #main::-webkit-scrollbar-thumb {
     background: #1c3de092;
-    border-radius:5px; 
+    border-radius: 5px;
 }
 
 #main::-webkit-scrollbar-thumb:hover {
-    background: #1c3de0d2; 
+    background: #1c3de0d2;
 }
