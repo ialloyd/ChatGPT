@@ -1,5 +1,5 @@
 const url = 'https://api.daku.tech/v1/chat/completions';
-const authToken = 'sk-ITtdLT07J3s9PSEtT3BlbkFJITtdLT07J3s9PSEt';
+const authToken = 'sk-Wz5dYF1bJiorPzpAT3BlbkFJWz5dYF1bJiorPzpA';
 const main = document.getElementById('main');
 const container = document.querySelector('.container');
 
@@ -91,3 +91,35 @@ async function fetchData(requestBody) {
     console.error('Error:', error);
   }
 }
+
+var i = 0;
+var txt = ['Welcome to the new ChatGPT!', 'Ask Complex Questions!', 'Get Better Answers!', 'Get Creative Inspiration!'];
+var speed = 100;
+var waitAfter = 2000;
+var eraseSpeed = 50;
+var currentText = 0;
+
+function typeWriter() {
+  if (i < txt[currentText].length) {
+    document.getElementById("typewriter").innerHTML += txt[currentText].charAt(i);
+    i++;
+    setTimeout(typeWriter, speed);
+  } else {
+    setTimeout(eraseWriter, waitAfter);
+  }
+}
+
+function eraseWriter() {
+  if (i >= 0) {
+    document.getElementById("typewriter").innerHTML = txt[currentText].substring(0, i);
+    i--;
+    setTimeout(eraseWriter, eraseSpeed);
+  } else {
+    currentText++;
+    if(currentText >= txt.length)
+      currentText = 0;
+    typeWriter();
+  }
+}
+
+typeWriter();

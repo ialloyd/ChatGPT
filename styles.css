@@ -43,9 +43,9 @@ body {
 #main {
 
     padding: 25px;
-    height: 80vh;
+    height: 70vh;
     overflow-y: auto;
-
+    flex: 0.75;
 }
 
 #main>div {
@@ -56,7 +56,7 @@ body {
 }
 
 #main>#user-input {
-    float:right;
+    float: right;
     background-color: rgba(0, 0, 139, 0.386);
 }
 
@@ -108,19 +108,30 @@ h1 {
 }
 
 #main::-webkit-scrollbar {
-    width: 5px;
+    display: none;
 }
 
-#main::-webkit-scrollbar-track {
-    background: #93ddf1;
-    border-radius: 5px;
+.box {
+
+    display: flex;
+    margin-left: 25px;
+    margin-right: 25px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+
 }
 
-#main::-webkit-scrollbar-thumb {
-    background: #1c3de092;
-    border-radius: 5px;
+.box>#left {
+    flex: 0.25;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-#main::-webkit-scrollbar-thumb:hover {
-    background: #1c3de0d2;
+#left>div {
+    font-size: x-large;
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
 }
