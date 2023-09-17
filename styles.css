@@ -6,7 +6,7 @@
 }
 
 body {
-    background: linear-gradient(to right, #1CB5E0, #000046, #240b36);
+    background: linear-gradient(to right, #36d1dc, #5b86e5);
     color: white;
 }
 
@@ -53,16 +53,18 @@ body {
     margin-bottom: 15px;
     border-radius: 10px;
     clear: both;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 #main>#user-input {
     float: right;
-    background-color: rgba(0, 0, 139, 0.386);
 }
 
 #main>#ai-output {
     float: left;
-    background-color: #1c3de092;
 }
 
 h1 {
@@ -74,7 +76,7 @@ h1 {
 
 .loader {
     border: 10px solid #f3f3f3;
-    border-top: 10px solid #000046;
+    border-top: 10px solid lightskyblue;
     border-radius: 50%;
     width: 100px;
     height: 100px;
@@ -104,7 +106,7 @@ h1 {
         width: 40px;
         height: 40px;
         border: 8px solid #f3f3f3;
-        border-top: 8px solid #000046;
+        border-top: 8px solid lightskyblue;
     }
 }
 
@@ -125,8 +127,8 @@ h1 {
 }
 
 .box>#left {
-    flex: 0.25;
     display: flex;
+    flex: 0.25;
     justify-content: center;
     align-items: center;
 }
