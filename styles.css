@@ -106,3 +106,6 @@ input[type='submit'] {
         border-top: 8px solid lightskyblue;
     }
 }
+::-webkit-scrollbar {
+    display: none;
+}
