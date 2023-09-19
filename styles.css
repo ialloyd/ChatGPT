@@ -6,72 +6,69 @@
 }
 
 body {
+
     background: linear-gradient(to right, #36d1dc, #5b86e5);
-    color: white;
-}
-
-.container {
-
     display: flex;
+    justify-content: center;
     align-items: center;
-    position: fixed;
-    bottom: 10px;
-    width: 100%;
-    padding-left: 25px;
-    padding-right: 25px;
+    min-height: 100vh;
+    margin: 25px;
 
 }
 
-.container>input {
+form {
 
-    width: 100%;
-    padding: 15px;
-    font-size: large;
-    border-radius: 10px;
-    border: none;
-    outline: none;
-}
-
-.container>span {
-
-    font-size: 50px;
-    padding: 10px;
-    cursor: pointer;
-
-}
-
-#main {
-
-    padding: 25px;
-    height: 70vh;
-    overflow-y: auto;
-    flex: 0.75;
-}
-
-#main>div {
-    padding: 10px;
-    margin-bottom: 15px;
-    border-radius: 10px;
-    clear: both;
     background: rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(10px);
     border-radius: 10px;
     border: 1px solid rgba(255, 255, 255, 0.2);
-}
-
-#main>#user-input {
-    float: right;
-}
-
-#main>#ai-output {
-    float: left;
-}
-
-h1 {
-    text-align: center;
     padding: 20px;
-    font-weight: 200;
-    font-style: italic;
+    color: white
+}
+
+label {
+
+    padding: 5px;
+
+}
+
+form>input:not(input[type='checkbox']) {
+
+    width: 100%;
+    margin: 20px 0;
+    padding: 5px;
+    border: none;
+    outline: none;
+
+
+}
+
+form>input[type='email'],
+form>input[type='password'] {
+
+    background: transparent;
+    border-bottom: 1px solid lightgray !important;
+    color: white;
+
+}
+
+h1,
+p {
+
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+form>input::placeholder {
+
+    color: lightgrey
+}
+
+input[type='submit'] {
+
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    color: white;
 }
 
 .loader {
@@ -108,33 +105,4 @@ h1 {
         border: 8px solid #f3f3f3;
         border-top: 8px solid lightskyblue;
     }
-}
-
-#main::-webkit-scrollbar {
-    display: none;
-}
-
-.box {
-
-    display: flex;
-    margin-left: 25px;
-    margin-right: 25px;
-    background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(10px);
-    border-radius: 10px;
-    border: 1px solid rgba(255, 255, 255, 0.2);
-
-}
-
-.box>#left {
-    display: flex;
-    flex: 0.25;
-    justify-content: center;
-    align-items: center;
-}
-
-#left>div {
-    font-size: x-large;
-    writing-mode: vertical-rl;
-    transform: rotate(180deg);
 }
